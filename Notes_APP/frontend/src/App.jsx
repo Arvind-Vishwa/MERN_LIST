@@ -1,9 +1,17 @@
 import { useEffect, useState } from "react";
+import axios from 'axios';
 function App(){
+    
+  useEffect(()=>{
+    axios.post("http://localhost:8080/add").then(()=>{
+      
+    })
+  },[])
 
   const[data,setData]=useState([]);
   const[input,setInput]=useState("");
 
+  
   const handleSubmit=(e)=>{
     e.preventDefault();
 
@@ -18,7 +26,7 @@ function App(){
 
   function deleteItem(id){
     const updateItems=data.filter((_,idx)=>idx !== id);
-    setData([updateItems]);
+    setData(updateItems);
   }
 
   
@@ -26,7 +34,7 @@ function App(){
   return (
     <>
     <form onSubmit={handleSubmit}>
-      <input type="text" value={input} onChange={(e)=>setInput(e.target.value)} />
+      <input type="text" value={input} name={text} onChange={(e)=>setInput(e.target.value)} />
       <button type="submit">Save</button>
       
     </form>
