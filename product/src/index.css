@@ -1,0 +1,13 @@
+.card-img-top {
+    height: 200px;
+    object-fit: contail;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    
+    
+  }
+  .btn{
+    border-radius: 5px;
+    color: black;
+    text-decoration-thickness: inherit;
+  }
