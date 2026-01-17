@@ -1,0 +1,16 @@
+.box {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(3, 100px);
+  gap: 1px;
+}
+
+.game{
+  padding: 20px;
+}
+.status{
+  padding: 20px;
+}
+.status button{
+  padding: 20px;
+}
