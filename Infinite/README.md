@@ -2,7 +2,8 @@
 ## window based scroll
 In this scrolling uses a window where it checks the height of screen and client where his mouse pointer scroll and total height
 ### Formula whhich I used
-const handleScroll = () => {
+    
+       const handleScroll = () => {
       const scrollTop = document.documentElement.scrollTop;
       const scrollHeight = document.documentElement.scrollHeight;
       const clientHeight = window.innerHeight;
