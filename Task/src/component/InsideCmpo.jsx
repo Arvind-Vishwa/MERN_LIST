@@ -1,23 +1,35 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 const InsideCmpo = () => {
 
-    const [data,setData]=useState([]);
+    const [data,setData]=useState(()=>{
+      return JSON.parse(localStorage.getItem('task')) || [];
+    });
     const[input,setInput]=useState("");
 
     const handleSubmit=(e)=>{
         e.preventDefault();
         if(input)
         setData(prev=>[...prev,input]);
+        
         setInput("");
     }
+    useEffect(()=>{
+      localStorage.setItem('task',JSON.stringify(data));
+    },[data])
     const handleChange=(e)=>{
-        console.log(e.target.value);
+        // console.log(e.target.value);
         setInput(e.target.value);
     }
     const handleDelete=(id)=>{
       setData(prev=>prev.filter((_,index) => id !== index));
+      
     }
+
+    
+    // localStorage.clear();
+
+
   return (
     <div className='text-center p-5'>
       <form onSubmit={handleSubmit}>
