@@ -7,10 +7,10 @@ const Navbar = () => {
       <div className='flex gap-6'>
         <form>
             <input 
-            className='bg-white rounded-xl border-0'
+            className='bg-white rounded-xl border-2'
 
             />
-            <button className='outline rounded-2xl cursor-pointer'>Search</button>
+            <button className='outline rounded-lg cursor-pointer p-2'>Search</button>
         </form>
         <a>Home</a>
         <a>Login</a>
