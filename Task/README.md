@@ -1,8 +1,11 @@
-# React + Vite
+# Task Manager
+# Link https://startling-madeleine-f0049b.netlify.app/
+## In this Project added the functionality 
+1. To add Task 
+2. See the Task
+3. You can delete task whenever it complete
+   
+## More functionality to be added in future
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Author
+Arvind Vishwakarma
