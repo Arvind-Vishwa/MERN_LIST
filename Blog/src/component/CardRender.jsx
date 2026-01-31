@@ -14,11 +14,11 @@ const CardRender = () => {
 
     let load=<h1 style={{backgroundColor:"red", padding:"10px", textAlign:"center"}}>....Loading</h1>
   return (
-    <div style={{display:"flex",flexWrap:'wrap', gap:"24px",justifyContent:"space-around", padding:"10px"}}>
+    <div  style={{display:"flex",flexWrap:'wrap', gap:"24px",justifyContent:"space-around", padding:"10px"}}>
        {
         loading && userData.map(function(el,idx){
             return <div key={idx}>
-                <CardExa author={el.author} description={el.description}
+                <CardExa id={el.id} author={el.author} description={el.description}
                 email={el.email} image={el.image} category={el.category}/> 
             </div>
         })
