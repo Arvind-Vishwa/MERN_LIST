@@ -1,17 +1,22 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import Card from 'react-bootstrap/Card';
+import { contextD } from './ContextData';
+import { useNavigate } from 'react-router-dom';
 
 function Login() {
+  let {login}=useContext(contextD);
     // localStorage.clear();
+    let navigate=useNavigate();
     const[input1,setInput1]=useState("");
     const[input2,setInput2] =useState("");
+    
     
     // const[userData,setUserData]=useState(()=>{
     //     return JSON.parse(localStorage.getItem('log')) || [];
     // });
     
     const handleSubmit=(e)=>{
-        
+        e.preventDefault();
         
         // let newItem={
         //     email:input1,
@@ -29,10 +34,13 @@ function Login() {
 
         if(userExist){
             alert("login sucess");
+            login();
+            navigate('/product');
+
         }
         else{
             alert('login failed');
-            e.preventDefault();
+            
         }
         // setUserData(prev=>[...prev,newItem]);
         setInput1('');
@@ -70,7 +78,7 @@ function Login() {
         onChange={(e)=>{setInput2(e.target.value)}}
         />
         <br/>
-        <button style={{margin:"10px" ,padding:"7px"}}>login</button>
+        <button type='submit' style={{margin:"10px" ,padding:"7px"}}>login</button>
         </form>
         <Card.Link href="/register">Not register yet ?</Card.Link>
       </Card.Body>

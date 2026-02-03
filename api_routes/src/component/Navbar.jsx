@@ -1,23 +1,41 @@
-import React from 'react'
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
+  import React, { useContext } from "react";
+  import { Container, Nav, Navbar, Button } from "react-bootstrap"; // Import Button here
+  import { contextD } from "./ContextData";
+  import { Link } from "react-router-dom";
+  import { useNavigate } from "react-router-dom";
+  const NavBar = () => {
+    let { log, logout } = useContext(contextD);
+    let navigate = useNavigate();
 
-const NavBar = () => {
-  return (
-    <div>
+    return (
       <Navbar bg="light" data-bs-theme="light">
         <Container>
-          <Navbar.Brand href="#home">Protected Routes</Navbar.Brand>
           <Nav className="me-5">
-            <Nav.Link href="#home">Product</Nav.Link>
-            <Nav.Link href="/login">Login</Nav.Link>
-            
+            <Navbar.Brand as={Link} to="/">
+              Protected Routes
+            </Navbar.Brand>
+            <Nav.Link as={Link} to="/product">
+              Product
+            </Nav.Link>
+
+            {log ? (
+              <Button
+                onClick={() => {
+                  logout();
+                  navigate("/login");
+                }}
+              >
+                logout
+              </Button>
+            ) : (
+              <Nav.Link as={Link} to="/login">
+                Login
+              </Nav.Link>
+            )}
           </Nav>
         </Container>
       </Navbar>
-    </div>
-  )
-}
+    );
+  };
 
-export default NavBar
+  export default NavBar;
