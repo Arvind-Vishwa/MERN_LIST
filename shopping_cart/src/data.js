@@ -1,6 +1,6 @@
 const data=[
     {
-      "id": 1,
+      "id": 101,
       "title": "Apple AirPods Max",
       "description": "Premium wireless over-ear headphones with active noise cancellation.",
       "image_url": "https://www.apple.com/newsroom/images/product/airpods/standard/Apple-AirPods-Pro-2nd-gen-hero-220907_big.jpg.large.jpg",
@@ -56,7 +56,7 @@ const data=[
       "price": 940
     },
     {
-      "id": 9,
+      "id": 109,
       "title": "Redragon GS520 Speakers",
       "description": "RGB desktop speakers for gaming and multimedia.",
       "image_url": "https://www.redragon.in/cdn/shop/products/GS510.png?v=1628505119&width=2048",
