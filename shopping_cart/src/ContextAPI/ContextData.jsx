@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import {createContext} from 'react'
 import {data} from '../data'
 export const dataContext=createContext();
@@ -9,6 +9,7 @@ const ContextData = (props) => {
       return JSON.parse(localStorage.getItem('cart')) || 0;
     }
   )
+
 
   return (
     <div>
