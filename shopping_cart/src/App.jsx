@@ -1,10 +1,18 @@
-import React from 'react'
+import {Routes,Route} from 'react-router-dom'
 import HomeCard from './component/HomeCard'
+import Cart from './component/Home/Cart'
 
 const App = () => {
+  
   return (
     <div>
-      <HomeCard />
+      <Routes>
+        <Route path='/' element={<HomeCard />}/>
+        <Route path='/product' element={<HomeCard/>}/>
+        <Route path='/cartitem' element={<Cart />}/>
+        
+      </Routes>
+      
     </div>
   )
 }
