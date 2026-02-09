@@ -9,6 +9,19 @@ const ContextData = (props) => {
     return stored ? JSON.parse(stored):[]
   });
 
+  const[log,setLog]=useState(
+    JSON.parse(localStorage.getItem("isloggedin"))==="true"
+  )
+
+  const login=()=>{
+    setLog(true);
+    localStorage.setItem(JSON.stringify("isloggedin"),"true");
+  }
+  const logout=()=>{
+    setLog(false);
+    localStorage.removeItem("isloggedin");
+  }
+
   const addToCart=(product)=>{
     
     setCart(prev=>{
@@ -60,7 +73,10 @@ const ContextData = (props) => {
         removeItem,
         incrQty,
         decrQty,
-        totalPrice
+        totalPrice,
+        log,
+        login,
+        logout
         }}>
       {props.children}
       </dataContext.Provider>
