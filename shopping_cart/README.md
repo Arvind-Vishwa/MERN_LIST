@@ -2,7 +2,7 @@
 ### link https://gleeful-churros-262e03.netlify.app/
 
 ## Screenshot
-![preview](./src/shopping.png)
+![preview](../shopping_cart/src/shopping.png)
 ### Uses 
 **`useState`**,**`useEffect`**,**`localstorage`**,**`Propsdrilling`**
 

@@ -1,8 +1,9 @@
 import {Routes,Route} from 'react-router-dom'
 import HomeCard from './component/HomeCard'
 import Cart from './component/Home/Cart'
-import Login from './Login.jsx'
+import Login from './login.jsx'
 import ProtectedRoute from './ProtectedRoute.jsx'
+import Register from './Register.jsx'
 const App = () => {
   
   return (
@@ -24,6 +25,7 @@ const App = () => {
         {
         <Login />
         }/>
+        <Route path='/register' element={<Register />}/>
       </Routes>
       
     </div>

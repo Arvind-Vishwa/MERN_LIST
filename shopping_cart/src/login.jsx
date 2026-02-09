@@ -1,6 +1,8 @@
 import React, { useContext, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { dataContext } from './ContextAPI/ContextData';
+import { Link } from 'react-router-dom';
+import Button from 'react-bootstrap/esm/Button';
 const Login = () => {
     const[input1,setInput1]=useState('');
     const [input2,setInput2]=useState('');
@@ -54,7 +56,9 @@ const Login = () => {
         <button 
         style={{display:"block",padding:"10px",margin:"5px"}}
         >Submit</button>
+        
       </form>
+      <Link to='/register'>Not Register Yet?</Link>
     </div>
   )
 }
