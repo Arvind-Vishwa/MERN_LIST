@@ -1,10 +1,36 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { UserRound, LockKeyhole } from 'lucide-react';
+import { contextValue } from '../ContextAPI/ContextData';
+import { useNavigate } from 'react-router-dom';
 
-const Login = () => {
+let Login = () => {
+  let {login}=useContext(contextValue);
+  
   const [input1, setInput1] = useState("");
   const [input2, setInput2] = useState("");
+  let navigate=useNavigate();
 
+  
+
+  const handleSubmit=(e)=>{
+    e.preventDefault();
+
+      let savedData=JSON.parse(localStorage.getItem('log'));
+      let userData=savedData.find(u=>{
+        if(u.email == input1 && u.password == input2){
+          return true;
+        }else{
+          return false;
+        }
+      })
+      if(userData){
+        alert("welcome back");
+        navigate('/');
+        login();
+        
+      }
+    
+  }
   // Style objects for better organization
   const containerStyle = {
     display: 'flex',
@@ -45,7 +71,7 @@ const Login = () => {
 
   return (
     <div style={containerStyle}>
-      <form style={formStyle} onSubmit={(e) => e.preventDefault()}>
+      <form style={formStyle} onSubmit={handleSubmit}>
         <div style={{ textAlign: "center", marginBottom: '10px' }}>
           <UserRound size={48} color="#555" />
           <h2 style={{ marginTop: '10px' }}>Login</h2>
