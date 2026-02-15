@@ -1,10 +1,11 @@
 import React, { useContext, useState } from 'react';
 import { UserRound, LockKeyhole } from 'lucide-react';
 import { contextValue } from '../ContextAPI/ContextData';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate,Link } from 'react-router-dom';
 
 let Login = () => {
-  let {login}=useContext(contextValue);
+  let {login,isAdmin}=useContext(contextValue);
+  console.log(isAdmin);
   
   const [input1, setInput1] = useState("");
   const [input2, setInput2] = useState("");
@@ -16,18 +17,33 @@ let Login = () => {
     e.preventDefault();
 
       let savedData=JSON.parse(localStorage.getItem('log'));
+
+      let checkAdmin=isAdmin.find(u=>{
+        if(u.email === input1  && u.password === input2){
+          return true;
+        }else{
+          return false;
+        }
+      });
       let userData=savedData.find(u=>{
         if(u.email == input1 && u.password == input2){
           return true;
         }else{
           return false;
         }
+        
       })
+      if(checkAdmin){
+        alert('welcome Admin');
+        navigate('/');
+        login();
+        return;
+      }
       if(userData){
         alert("welcome back");
         navigate('/');
         login();
-        
+        return;
       }
     
   }
@@ -77,7 +93,7 @@ let Login = () => {
           <h2 style={{ marginTop: '10px' }}>Login</h2>
         </div>
 
-        {/* Email Input */}
+        
         <div style={inputGroupStyle}>
           <UserRound size={20} color="#888" />
           <input 
@@ -105,9 +121,7 @@ let Login = () => {
 
         
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", fontSize: '14px' }}>
-          <label style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
-            <input type="radio" name="role" /> Admin
-          </label>
+          
           <label style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
             <input type="checkbox" /> Remember me
           </label>
@@ -125,7 +139,9 @@ let Login = () => {
         }}>
           Submit
         </button>
+        <Link to='/register'>Not Register Yet?</Link>
       </form>
+      
     </div>
   );
 };
