@@ -7,8 +7,9 @@ import { Key,LogOut } from 'lucide-react';
 import { contextValue } from '../ContextAPI/ContextData';
 import { useContext } from 'react';
 
+
 function NavBar() {
-  const {log,logout}=useContext(contextValue);
+  const {log,logout,cart}=useContext(contextValue);
     const navigate=useNavigate();
   return (
     
@@ -21,8 +22,13 @@ function NavBar() {
             
           </Nav>
           <button 
-          
-          style={{border:"none",paddingRight:"10px"}}>cart:</button>
+          style={{border:"none",paddingRight:"10px"}}
+          onClick={()=>{
+            navigate('/cart')
+          }}
+          >
+            cart:{cart.length}
+          </button>
           
           {
             log ? (
@@ -45,6 +51,7 @@ function NavBar() {
           }
           
         </Container>
+        
       </Navbar>
   )}
 
