@@ -13,7 +13,7 @@ const Cart = () => {
     {
         cart.map(function(c,idx){
             return <div key={idx} >
-              <CartItem title={c.title} desc={c.desc} img={c.img}
+              <CartItem title={c.title} description={c.description} image_url={c.image_url}
             price={c.price} id={c.id} qty={c.qty}
             />
             </div>

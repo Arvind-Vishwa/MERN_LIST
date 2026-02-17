@@ -10,7 +10,7 @@ const CartItem = (props) => {
   return (
     <div >
     <Card style={{ width: '18rem' ,padding:"2rem", margin:"1rem"}}>
-      <Card.Img variant="top" style={{height:"5rem"}} src={props.img} />
+      <Card.Img variant="top" style={{height:"5rem"}} src={props.image_url} />
       <Card.Body style={{height:"10rem"}}>
         <Card.Title>{props.title}</Card.Title>
         

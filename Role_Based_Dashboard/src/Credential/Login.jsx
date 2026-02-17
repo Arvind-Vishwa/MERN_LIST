@@ -5,7 +5,7 @@ import { useNavigate,Link } from 'react-router-dom';
 
 let Login = () => {
   let {login,isAdmin}=useContext(contextValue);
-  console.log(isAdmin);
+  
   
   const [input1, setInput1] = useState("");
   const [input2, setInput2] = useState("");

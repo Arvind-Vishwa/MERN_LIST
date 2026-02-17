@@ -3,7 +3,7 @@ const data=[
       "id": 101,
       "title": "Apple AirPods Max",
       "description": "Premium wireless over-ear headphones with active noise cancellation.",
-      "image_url": "https://www.apple.com/newsroom/images/product/airpods/standard/Apple-AirPods-Pro-2nd-gen-hero-220907_big.jpg.large.jpg",
+      "image_url": 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQm0gzorn5lyuaszGLz3dY0Tx8XfEKP13CvZA&s',
       "price": 59900
     },
     {

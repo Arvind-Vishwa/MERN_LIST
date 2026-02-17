@@ -13,12 +13,12 @@ function NavBar() {
     const navigate=useNavigate();
   return (
     
-      <Navbar bg="dark" data-bs-theme="dark">
+      <Navbar sticky="top" bg="dark" data-bs-theme="dark">
         <Container>
-          <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+          <Navbar.Brand href="#home">Shopp</Navbar.Brand>
           <Nav className="me-auto">
             <Nav.Link as={Link} to='/'>Home</Nav.Link>
-            <Nav.Link as={Link} to='/product'>Product</Nav.Link>
+            
             
           </Nav>
           <button 

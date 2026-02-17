@@ -7,8 +7,8 @@ const Cards = () => {
       {
         data.map(function(d,id){
             return <div key={id}>
-                <CardEx title={d.title} desc={d.description}
-                price={d.price} img={d.image_url} id={d.id}
+                <CardEx title={d.title} description={d.description}
+                price={d.price} image_url={d.image_url} id={d.id}
                 />
             </div>
         })
